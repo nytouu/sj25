@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbqfibu8866p3"]
+[gd_scene load_steps=6 format=3 uid="uid://bbqfibu8866p3"]
 
 [ext_resource type="PackedScene" uid="uid://05uplq1qsiux" path="res://scenes/prefabs/prototype_room.tscn" id="1_ixygg"]
 [ext_resource type="Script" uid="uid://cojgq6kb6gnch" path="res://scripts/cursor.gd" id="2_20kwy"]
 [ext_resource type="PackedScene" uid="uid://o4i0x8yjiqeh" path="res://assets/cursor_arrow/cursor_arrow.tscn" id="3_nhfup"]
+[ext_resource type="PackedScene" uid="uid://dn86brdnl7ou6" path="res://assets/frame/frame.tscn" id="4_sdrrl"]
 
 [sub_resource type="Environment" id="Environment_ixygg"]
 background_mode = 1
@@ -69,3 +70,29 @@ environment = SubResource("Environment_ixygg")
 script = ExtResource("2_20kwy")
 
 [node name="CursorArrow" parent="Cursor" instance=ExtResource("3_nhfup")]
+
+[node name="FrameGroup" type="Node3D" parent="."]
+
+[node name="Frame" parent="FrameGroup" instance=ExtResource("4_sdrrl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 1.5, 2)
+
+[node name="Frame2" parent="FrameGroup" instance=ExtResource("4_sdrrl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 1.5, 9)
+
+[node name="Frame3" parent="FrameGroup" instance=ExtResource("4_sdrrl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.2, 1.5, 9)
+
+[node name="Frame4" parent="FrameGroup" instance=ExtResource("4_sdrrl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 1.5, 9)
+
+[node name="Frame7" parent="FrameGroup" instance=ExtResource("4_sdrrl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1.5, 5.4)
+
+[node name="Frame8" parent="FrameGroup" instance=ExtResource("4_sdrrl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1.5, 0.4)
+
+[node name="Frame5" parent="FrameGroup" instance=ExtResource("4_sdrrl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.5, -5)
+
+[node name="Frame6" parent="FrameGroup" instance=ExtResource("4_sdrrl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 1.5, -5)
