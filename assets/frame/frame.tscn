@@ -1,13 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://dn86brdnl7ou6"]
+[gd_scene load_steps=7 format=3 uid="uid://dn86brdnl7ou6"]
 
 [ext_resource type="PackedScene" uid="uid://coy1lrjm01fjd" path="res://assets/frame/Frame0.fbx" id="1_jws1d"]
+[ext_resource type="Script" uid="uid://0alpwtp7bw1u" path="res://scripts/frame.gd" id="1_o5v1b"]
 [ext_resource type="Texture2D" uid="uid://cjf6w1iadromt" path="res://addons/kenney_prototype_textures/orange/texture_11.png" id="2_o5v1b"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5v1b"]
+albedo_texture = ExtResource("2_o5v1b")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jws1d"]
+material = SubResource("StandardMaterial3D_o5v1b")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5v1b"]
+size = Vector3(0.0855117, 1.67474, 2.05942)
+
 [node name="Frame" type="Node3D"]
+script = ExtResource("1_o5v1b")
 
 [node name="FrameMesh" parent="." instance=ExtResource("1_jws1d")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Sprite3D" type="Sprite3D" parent="FrameMesh"]
-transform = Transform3D(-7.66238e-09, -0.14192, -6.55671e-09, 0, -6.20354e-09, 0.15, -0.175295, 6.20354e-09, 2.86603e-16, 0, 0.0320666, 0)
-texture = ExtResource("2_o5v1b")
+[node name="Texture" type="MeshInstance3D" parent="FrameMesh"]
+transform = Transform3D(0.742676, 0, 0, 0, 1, 0, 0, 0, 0.926373, -0.00523812, 0.0252721, -0.0011096)
+mesh = SubResource("PlaneMesh_jws1d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0445989, 0.0167672, -0.0188567)
+shape = SubResource("BoxShape3D_o5v1b")
+debug_color = Color(0, 0.857143, 1, 0.42)
