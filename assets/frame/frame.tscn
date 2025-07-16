@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn86brdnl7ou6"]
+
+[ext_resource type="PackedScene" uid="uid://coy1lrjm01fjd" path="res://assets/frame/Frame0.fbx" id="1_jws1d"]
+[ext_resource type="Texture2D" uid="uid://cjf6w1iadromt" path="res://addons/kenney_prototype_textures/orange/texture_11.png" id="2_o5v1b"]
+
+[node name="Frame" type="Node3D"]
+
+[node name="FrameMesh" parent="." instance=ExtResource("1_jws1d")]
+
+[node name="Sprite3D" type="Sprite3D" parent="FrameMesh"]
+transform = Transform3D(-7.66238e-09, -0.14192, -6.55671e-09, 0, -6.20354e-09, 0.15, -0.175295, 6.20354e-09, 2.86603e-16, 0, 0.0320666, 0)
+texture = ExtResource("2_o5v1b")
