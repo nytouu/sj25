@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://05uplq1qsiux" path="res://scenes/prefabs/prototype_room.tscn" id="1_ixygg"]
 [ext_resource type="Script" uid="uid://cojgq6kb6gnch" path="res://scripts/cursor.gd" id="2_20kwy"]
-[ext_resource type="PackedScene" uid="uid://dmcmcsxadtlkq" path="res://assets/cursor_arrow/cursor_arrow.glb" id="3_nhfup"]
+[ext_resource type="PackedScene" uid="uid://o4i0x8yjiqeh" path="res://assets/cursor_arrow/cursor_arrow.tscn" id="3_nhfup"]
 
 [sub_resource type="Environment" id="Environment_ixygg"]
 background_mode = 1

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://o4i0x8yjiqeh"]
+
+[ext_resource type="PackedScene" uid="uid://dmcmcsxadtlkq" path="res://assets/cursor_arrow/cursor_arrow.glb" id="1_6soki"]
+[ext_resource type="Material" uid="uid://bcjtwjlalvvkr" path="res://assets/cursor_arrow/mat_cursor_arrow.tres" id="2_gugdx"]
+
+[node name="CursorArrow" type="Node3D"]
+
+[node name="Mesh" parent="." instance=ExtResource("1_6soki")]
+
+[node name="Cylinder" parent="Mesh" index="0"]
+material_override = ExtResource("2_gugdx")
+
+[editable path="Mesh"]
