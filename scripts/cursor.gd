@@ -24,7 +24,7 @@ func _screen_to_point() -> Array:
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var raycast = _screen_to_point()
 
 	if raycast[RAY_RESULT.POSITION] != Vector3.ZERO:
