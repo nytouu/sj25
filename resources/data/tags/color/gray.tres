@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_m410w")
-name = ""
+name = "GRAY"
 color = Color(0, 0, 0, 1)
 description = ""
 metadata/_custom_type_script = "uid://bpt1617ri148a"

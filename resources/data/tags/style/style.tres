@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Category" load_steps=6 format=3 uid="uid://chilm8dyb4onb"]
+
+[ext_resource type="Script" uid="uid://bpt1617ri148a" path="res://resources/data/tags/tag_ressource.gd" id="1_8mlvk"]
+[ext_resource type="Resource" uid="uid://dy51oavb80jqs" path="res://resources/data/tags/style/abstract.tres" id="2_7cufk"]
+[ext_resource type="Script" uid="uid://cs05jffagcsew" path="res://resources/data/tags/category_ressource.gd" id="2_exhtc"]
+[ext_resource type="Resource" uid="uid://b20jbtseagcbw" path="res://resources/data/tags/style/cubisme.tres" id="3_51o61"]
+[ext_resource type="Resource" uid="uid://geo7lnwmbl82" path="res://resources/data/tags/style/impressionist.tres" id="4_idid6"]
+
+[resource]
+script = ExtResource("2_exhtc")
+name = "STYLE"
+description = ""
+defaultColor = Color(0, 0, 0, 1)
+includedTag = Array[ExtResource("1_8mlvk")]([ExtResource("2_7cufk"), ExtResource("3_51o61"), ExtResource("4_idid6")])
+metadata/_custom_type_script = "uid://cs05jffagcsew"

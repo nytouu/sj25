@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbqfibu8866p3"]
+[gd_scene load_steps=10 format=3 uid="uid://bbqfibu8866p3"]
 
 [ext_resource type="PackedScene" uid="uid://05uplq1qsiux" path="res://scenes/prefabs/prototype_room.tscn" id="1_ixygg"]
 [ext_resource type="Script" uid="uid://cojgq6kb6gnch" path="res://scripts/cursor.gd" id="2_20kwy"]
 [ext_resource type="PackedScene" uid="uid://o4i0x8yjiqeh" path="res://assets/cursor_arrow/cursor_arrow.tscn" id="3_nhfup"]
 [ext_resource type="PackedScene" uid="uid://b3im5x811pdg3" path="res://assets/UI/RightMenu/RightMenu.tscn" id="4_sdrrl"]
+[ext_resource type="Script" uid="uid://cs05jffagcsew" path="res://resources/data/tags/category_ressource.gd" id="5_tx354"]
+[ext_resource type="Resource" uid="uid://cj71ex366pbb" path="res://resources/data/tags/color/color.tres" id="6_xw5o4"]
+[ext_resource type="Resource" uid="uid://cjx0mk5fiylyg" path="res://resources/data/tags/date/date.tres" id="7_5w0st"]
+[ext_resource type="Resource" uid="uid://chilm8dyb4onb" path="res://resources/data/tags/style/style.tres" id="8_v5kwg"]
 
 [sub_resource type="Environment" id="Environment_ixygg"]
 background_mode = 1
@@ -72,3 +76,4 @@ script = ExtResource("2_20kwy")
 [node name="CursorArrow" parent="Cursor" instance=ExtResource("3_nhfup")]
 
 [node name="RightMenu" parent="." instance=ExtResource("4_sdrrl")]
+_initialCategoryList = Array[ExtResource("5_tx354")]([ExtResource("6_xw5o4"), ExtResource("7_5w0st"), ExtResource("8_v5kwg")])

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tag" load_steps=2 format=3 uid="uid://w05qwml1v1l7"]
+
+[ext_resource type="Script" uid="uid://bpt1617ri148a" path="res://resources/data/tags/tag_ressource.gd" id="1_m8bbi"]
+
+[resource]
+script = ExtResource("1_m8bbi")
+name = "XX"
+color = Color(0, 0, 0, 1)
+description = ""
+metadata/_custom_type_script = "uid://bpt1617ri148a"

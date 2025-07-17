@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3im5x811pdg3"]
+[gd_scene load_steps=6 format=3 uid="uid://b3im5x811pdg3"]
 
 [ext_resource type="Script" uid="uid://d36mbph6mbq00" path="res://assets/UI/RightMenu/right_menu_controller.gd" id="1_poswa"]
+[ext_resource type="Script" uid="uid://cs05jffagcsew" path="res://resources/data/tags/category_ressource.gd" id="2_88aqk"]
+[ext_resource type="Resource" uid="uid://cj71ex366pbb" path="res://resources/data/tags/color/color.tres" id="3_qfh3q"]
+[ext_resource type="Resource" uid="uid://cjx0mk5fiylyg" path="res://resources/data/tags/date/date.tres" id="4_qfh3q"]
 
 [sub_resource type="GDScript" id="GDScript_88aqk"]
 script/source = "extends OptionButton
@@ -19,6 +22,7 @@ offset_left = -109.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_poswa")
+_initialCategoryList = Array[ExtResource("2_88aqk")]([ExtResource("3_qfh3q"), ExtResource("4_qfh3q")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -47,74 +51,24 @@ current_tab = 0
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="ItemList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Inventory"]
+[node name="ArtItemList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Inventory"]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 auto_width = true
 auto_height = true
 wraparound_items = false
 max_columns = 2
 same_column_width = true
-fixed_icon_size = Vector2i(60, 60)
+fixed_column_width = 100
+icon_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/TabContainer/Inventory"]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 
 [node name="OptionButton" type="OptionButton" parent="PanelContainer/VBoxContainer/TabContainer/Inventory/VBoxContainer"]
 layout_mode = 2
-item_count = 3
-popup/item_0/text = "DATE"
-popup/item_0/id = 0
-popup/item_1/text = "STYLE"
-popup/item_1/id = 1
-popup/item_2/text = "COLOR"
-popup/item_2/id = 3
 script = SubResource("GDScript_88aqk")
-
-[node name="DateItemList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Inventory/VBoxContainer"]
-visible = false
-layout_mode = 2
-auto_width = true
-auto_height = true
-wraparound_items = false
-item_count = 5
-item_0/text = "XXI"
-item_1/text = "XX"
-item_2/text = "XIX"
-item_3/text = "XVIII"
-item_4/text = "XVII"
-
-[node name="StyleItemList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Inventory/VBoxContainer"]
-visible = false
-layout_mode = 2
-auto_width = true
-auto_height = true
-wraparound_items = false
-item_count = 5
-item_0/text = "IMPRESSIONISM"
-item_1/text = "CUBISM"
-item_2/text = "FAUISM"
-item_3/text = "MINIMALISM"
-item_4/text = "ABSTRACT"
-
-[node name="ColorItemList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Inventory/VBoxContainer"]
-visible = false
-layout_mode = 2
-auto_width = true
-auto_height = true
-wraparound_items = false
-item_count = 5
-item_0/text = "RED"
-item_1/text = "BLUE"
-item_2/text = "GREEN"
-item_3/text = "YELLOW"
-item_4/text = "ABSTRACT"
-
-[node name="ItemList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Inventory/VBoxContainer"]
-layout_mode = 2
-auto_width = true
-auto_height = true
-item_count = 1
-item_0/text = "dbrddb"
 
 [node name="Almanach2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/TabContainer"]
 visible = false

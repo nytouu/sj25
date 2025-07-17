@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Category" load_steps=6 format=3 uid="uid://cjx0mk5fiylyg"]
+
+[ext_resource type="Script" uid="uid://bpt1617ri148a" path="res://resources/data/tags/tag_ressource.gd" id="1_0v814"]
+[ext_resource type="Resource" uid="uid://dkl2uj4flrtrv" path="res://resources/data/tags/date/XXI.tres" id="2_3cxuk"]
+[ext_resource type="Script" uid="uid://cs05jffagcsew" path="res://resources/data/tags/category_ressource.gd" id="2_6lo5f"]
+[ext_resource type="Resource" uid="uid://w05qwml1v1l7" path="res://resources/data/tags/date/XX.tres" id="3_cmj76"]
+[ext_resource type="Resource" uid="uid://iw8a1wi62uta" path="res://resources/data/tags/date/XIX.tres" id="4_pte1s"]
+
+[resource]
+script = ExtResource("2_6lo5f")
+name = "DATE"
+description = ""
+defaultColor = Color(0, 0, 0, 1)
+includedTag = Array[ExtResource("1_0v814")]([ExtResource("2_3cxuk"), ExtResource("3_cmj76"), ExtResource("4_pte1s")])
+metadata/_custom_type_script = "uid://cs05jffagcsew"
