@@ -26,6 +26,10 @@ func _ready() -> void:
 # needs to be refacored for clarity
 func _addInitialItems():
 	
+	_option_button.add_item("ALL",0)
+	
+	
+	
 	for c in _initialCategoryList:
 		
 		
@@ -44,32 +48,35 @@ func _addInitialItems():
 		i.hide()
 		
 		_categoryList.append(c)
-		
-		
-		
-		if(_selectedCategory == null):
-			_selectedCategory = c
-			i.show()
 			
 		
 		_option_button.add_item(c.name, _categoryList.size()-1)
 		i.connect("item_selected", Callable(self, "_on_item_list_item_selected").bind(i, c))
 		
+		_update_art_item_list()
 
 
 
 func _on_option_button_item_selected(index: int) -> void:
 	
+	
+		
+	
 	for i in _itemListList.size():
 		
-		if (i == index):
+		if (i == index-1):
 			_itemListList[i].show()
 		else:
 			_itemListList[i].hide()
 	
-	_selectedCategory = _categoryList[index]
-	_selectedTag = _selectedCategory.includedTag[0]
-	_itemListList[index].select(0)
+	if(index == 0):
+		_selectedTag = null
+		_selectedCategory = null
+	else:
+		_selectedCategory = _categoryList[index-1]
+		_selectedTag = _selectedCategory.includedTag[0]
+		_itemListList[index-1].select(0)
+		
 	_update_art_item_list()
 
 func _on_item_list_item_selected(index: int,itemList: ItemList ,category: Category):
