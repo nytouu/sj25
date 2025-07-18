@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://6fqigji7h0uq"]
+
+[ext_resource type="PackedScene" uid="uid://bihii7il7ap7k" path="res://assets/platypus/Platypus.fbx" id="1_ggt25"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0fbch"]
+size = Vector3(1.6, 0.5, 1)
+
+[node name="Platypus" type="Node3D"]
+
+[node name="Platypus" parent="." instance=ExtResource("1_ggt25")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 0.25, 0)
+shape = SubResource("BoxShape3D_0fbch")

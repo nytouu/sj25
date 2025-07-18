@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbqfibu8866p3"]
+[gd_scene load_steps=15 format=3 uid="uid://bbqfibu8866p3"]
 
 [ext_resource type="PackedScene" uid="uid://05uplq1qsiux" path="res://scenes/prefabs/prototype_room.tscn" id="1_ixygg"]
 [ext_resource type="Script" uid="uid://cojgq6kb6gnch" path="res://scripts/cursor.gd" id="2_20kwy"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://coy1lrjm01fjd" path="res://assets/frame/Frame0.fbx" id="5_whm2p"]
 [ext_resource type="Texture2D" uid="uid://0787sw60fooq" path="res://addons/kenney_prototype_textures/green/texture_11.png" id="6_jmxw3"]
 [ext_resource type="Texture2D" uid="uid://cjf6w1iadromt" path="res://addons/kenney_prototype_textures/orange/texture_11.png" id="6_tx354"]
+[ext_resource type="PackedScene" uid="uid://6fqigji7h0uq" path="res://assets/platypus/platypus.tscn" id="8_tx354"]
 
 [sub_resource type="Environment" id="Environment_ixygg"]
 background_mode = 1
@@ -29,6 +30,7 @@ size = Vector3(0.0855117, 1.67474, 2.05942)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmxw3"]
 albedo_texture = ExtResource("6_jmxw3")
+uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jws1d"]
 material = SubResource("StandardMaterial3D_jmxw3")
@@ -48,8 +50,9 @@ transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.3
 light_color = Color(1, 0.770841, 0.407929, 1)
 light_energy = 2.0
 light_bake_mode = 1
+shadow_enabled = true
 spot_range = 20.0
-spot_angle = 89.0
+spot_angle = 75.0
 spot_angle_attenuation = 0.659753
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights"]
@@ -57,8 +60,9 @@ transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.3
 light_color = Color(1, 0.770841, 0.407929, 1)
 light_energy = 2.0
 light_bake_mode = 1
+shadow_enabled = true
 spot_range = 20.0
-spot_angle = 89.0
+spot_angle = 75.0
 spot_angle_attenuation = 0.659753
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Lights"]
@@ -66,8 +70,9 @@ transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.3
 light_color = Color(1, 0.770841, 0.407929, 1)
 light_energy = 2.0
 light_bake_mode = 1
+shadow_enabled = true
 spot_range = 20.0
-spot_angle = 89.0
+spot_angle = 75.0
 spot_angle_attenuation = 0.659753
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Lights"]
@@ -75,8 +80,9 @@ transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.3
 light_color = Color(1, 0.770841, 0.407929, 1)
 light_energy = 2.0
 light_bake_mode = 1
+shadow_enabled = true
 spot_range = 20.0
-spot_angle = 89.0
+spot_angle = 75.0
 spot_angle_attenuation = 0.659753
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -133,3 +139,6 @@ collision_layer = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0445989, 0.0167672, -0.0188567)
 shape = SubResource("BoxShape3D_o5v1b")
 debug_color = Color(0, 0.857143, 1, 0.42)
+
+[node name="Platypus" parent="." instance=ExtResource("8_tx354")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 3.5)

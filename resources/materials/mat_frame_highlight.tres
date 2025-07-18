@@ -6,9 +6,9 @@
 render_priority = 0
 shader = ExtResource("1_idn2i")
 shader_parameter/shine_color = Color(1, 1, 1, 1)
-shader_parameter/cycle_interval = 5.0
-shader_parameter/shine_speed = 1.0
-shader_parameter/shine_width = 55.0
-shader_parameter/shine_angle_x = 0.0
-shader_parameter/shine_angle_y = 0.0
-shader_parameter/shine_angle_z = 45.0
+shader_parameter/cycle_interval = 1.0
+shader_parameter/shine_speed = 4.0
+shader_parameter/shine_width = 60.0
+shader_parameter/shine_angle_x = -45.0
+shader_parameter/shine_angle_y = 90.0
+shader_parameter/shine_angle_z = 0.0

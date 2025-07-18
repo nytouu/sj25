@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://05uplq1qsiux"]
+[gd_scene load_steps=3 format=3 uid="uid://05uplq1qsiux"]
 
 [ext_resource type="Material" uid="uid://b5cd1nusu6o2a" path="res://resources/materials/mat_prototype_grid.tres" id="1_ycmsk"]
-[ext_resource type="PackedScene" uid="uid://c8asl2lixxnx3" path="res://assets/base/Socle.fbx" id="3_8xwff"]
-[ext_resource type="PackedScene" uid="uid://bihii7il7ap7k" path="res://assets/platypus/Platypus.fbx" id="3_kleqt"]
+[ext_resource type="PackedScene" uid="uid://bnnpgut8bp7xj" path="res://assets/base/socle.tscn" id="2_vx0uu"]
 
 [node name="PrototypeRoom" type="Node3D"]
 
@@ -39,14 +38,11 @@ material_override = ExtResource("1_ycmsk")
 size = Vector3(13, 4, 1)
 material = ExtResource("1_ycmsk")
 
-[node name="Socle" parent="Room" instance=ExtResource("3_8xwff")]
+[node name="Socle4" parent="Room" instance=ExtResource("2_vx0uu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, 3.5)
 
-[node name="Socle2" parent="Room" instance=ExtResource("3_8xwff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.5, -2.5)
-
-[node name="Socle3" parent="Room" instance=ExtResource("3_8xwff")]
+[node name="Socle5" parent="Room" instance=ExtResource("2_vx0uu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.5, -7.5)
 
-[node name="Platypus" parent="." instance=ExtResource("3_kleqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 3.5)
+[node name="Socle6" parent="Room" instance=ExtResource("2_vx0uu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.5, -2.5)
