@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3im5x811pdg3"]
+
+[ext_resource type="Script" uid="uid://d36mbph6mbq00" path="res://assets/UI/RightMenu/right_menu_controller.gd" id="1_poswa"]
+[ext_resource type="Script" uid="uid://cs05jffagcsew" path="res://resources/data/tags/category_ressource.gd" id="2_88aqk"]
+[ext_resource type="Resource" uid="uid://cj71ex366pbb" path="res://resources/data/tags/color/color.tres" id="3_qfh3q"]
+[ext_resource type="Resource" uid="uid://cjx0mk5fiylyg" path="res://resources/data/tags/date/date.tres" id="4_qfh3q"]
+[ext_resource type="Script" uid="uid://calfw7bq2cnhr" path="res://assets/UI/RightMenu/custom_item_list.gd" id="5_dmrgb"]
+
+[sub_resource type="GDScript" id="GDScript_88aqk"]
+script/source = "extends OptionButton
+
+
+ 
+"
+
+[node name="RightMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -109.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_poswa")
+_initialCategoryList = Array[ExtResource("2_88aqk")]([ExtResource("3_qfh3q"), ExtResource("4_qfh3q")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -309.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "INVENTORY"
+horizontal_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Inventory" type="HBoxContainer" parent="PanelContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ArtItemList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Inventory"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+auto_width = true
+auto_height = true
+wraparound_items = false
+max_columns = 2
+same_column_width = true
+fixed_column_width = 100
+icon_mode = 0
+script = ExtResource("5_dmrgb")
+metadata/_custom_type_script = "uid://calfw7bq2cnhr"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/TabContainer/Inventory"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="PanelContainer/VBoxContainer/TabContainer/Inventory/VBoxContainer"]
+layout_mode = 2
+script = SubResource("GDScript_88aqk")
+
+[node name="Almanach2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[connection signal="item_selected" from="PanelContainer/VBoxContainer/TabContainer/Inventory/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

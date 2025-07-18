@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GlobalManagerInitialData" load_steps=7 format=3 uid="uid://cuntxdyuo8t57"]
+
+[ext_resource type="Script" uid="uid://dahjacvxjt7g8" path="res://resources/data/artwork/artwork.gd" id="1_2cola"]
+[ext_resource type="Script" uid="uid://citvaq2entqa8" path="res://resources/data/global_manager_initial_data.gd" id="2_a13wa"]
+[ext_resource type="Resource" uid="uid://ip4csrbr5da6" path="res://resources/data/artwork/painting_00.tres" id="2_e3ckd"]
+[ext_resource type="Resource" uid="uid://ca5fe7xho51qp" path="res://resources/data/artwork/painting_01.tres" id="3_h75m1"]
+[ext_resource type="Resource" uid="uid://c3agraiojek6t" path="res://resources/data/artwork/painting_02.tres" id="4_pjnfk"]
+[ext_resource type="Resource" uid="uid://bg48r1ey1qjs7" path="res://resources/data/artwork/painting_03.tres" id="5_ka0tm"]
+
+[resource]
+script = ExtResource("2_a13wa")
+InitialInventory = Array[ExtResource("1_2cola")]([ExtResource("2_e3ckd"), ExtResource("3_h75m1"), ExtResource("4_pjnfk"), ExtResource("5_ka0tm")])
+metadata/_custom_type_script = "uid://citvaq2entqa8"

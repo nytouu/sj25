@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Artwork" load_steps=7 format=3 uid="uid://ip4csrbr5da6"]
+
+[ext_resource type="Script" uid="uid://dahjacvxjt7g8" path="res://resources/data/artwork/artwork.gd" id="1_uy1kv"]
+[ext_resource type="Script" uid="uid://bpt1617ri148a" path="res://resources/data/tags/tag_ressource.gd" id="2_x7ptn"]
+[ext_resource type="Resource" uid="uid://ch6dle7cacx5t" path="res://resources/data/tags/color/cold.tres" id="3_kenfw"]
+[ext_resource type="Resource" uid="uid://iw8a1wi62uta" path="res://resources/data/tags/date/XIX.tres" id="4_uy1kv"]
+[ext_resource type="Resource" uid="uid://dy51oavb80jqs" path="res://resources/data/tags/style/abstract.tres" id="5_dlgnb"]
+[ext_resource type="Texture2D" uid="uid://b1vcv8qcefx4t" path="res://assets/texture/Painting01.png" id="6_24dbt"]
+
+[resource]
+script = ExtResource("1_uy1kv")
+name = "UnderTheSea"
+texture = ExtResource("6_24dbt")
+tags = Array[ExtResource("2_x7ptn")]([ExtResource("3_kenfw"), ExtResource("4_uy1kv"), ExtResource("5_dlgnb")])
+metadata/_custom_type_script = "uid://dahjacvxjt7g8"

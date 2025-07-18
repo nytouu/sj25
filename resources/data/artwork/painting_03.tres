@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Artwork" load_steps=7 format=3 uid="uid://bg48r1ey1qjs7"]
+
+[ext_resource type="Script" uid="uid://dahjacvxjt7g8" path="res://resources/data/artwork/artwork.gd" id="1_onrhx"]
+[ext_resource type="Script" uid="uid://bpt1617ri148a" path="res://resources/data/tags/tag_ressource.gd" id="2_exx01"]
+[ext_resource type="Resource" uid="uid://cuj2tb4hyely5" path="res://resources/data/tags/color/warm.tres" id="3_kbtrr"]
+[ext_resource type="Resource" uid="uid://iw8a1wi62uta" path="res://resources/data/tags/date/XIX.tres" id="4_vwpgu"]
+[ext_resource type="Resource" uid="uid://dy51oavb80jqs" path="res://resources/data/tags/style/abstract.tres" id="5_onrhx"]
+[ext_resource type="Texture2D" uid="uid://cv8utsswmmidt" path="res://assets/texture/Painting02.png" id="6_onrhx"]
+
+[resource]
+script = ExtResource("1_onrhx")
+name = "WarmFeelings"
+texture = ExtResource("6_onrhx")
+tags = Array[ExtResource("2_exx01")]([ExtResource("3_kbtrr"), ExtResource("4_vwpgu"), ExtResource("5_onrhx")])
+metadata/_custom_type_script = "uid://dahjacvxjt7g8"
