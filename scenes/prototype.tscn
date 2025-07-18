@@ -1,14 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbqfibu8866p3"]
+[gd_scene load_steps=15 format=3 uid="uid://bbqfibu8866p3"]
 
 [ext_resource type="PackedScene" uid="uid://05uplq1qsiux" path="res://scenes/prefabs/prototype_room.tscn" id="1_ixygg"]
 [ext_resource type="Script" uid="uid://cojgq6kb6gnch" path="res://scripts/cursor.gd" id="2_20kwy"]
 [ext_resource type="PackedScene" uid="uid://o4i0x8yjiqeh" path="res://assets/cursor_arrow/cursor_arrow.tscn" id="3_nhfup"]
-[ext_resource type="PackedScene" uid="uid://b3im5x811pdg3" path="res://assets/UI/RightMenu/RightMenu.tscn" id="4_sdrrl"]
-[ext_resource type="Script" uid="uid://cs05jffagcsew" path="res://resources/data/tags/category_ressource.gd" id="5_tx354"]
-[ext_resource type="Resource" uid="uid://cj71ex366pbb" path="res://resources/data/tags/color/color.tres" id="6_xw5o4"]
-[ext_resource type="Resource" uid="uid://cjx0mk5fiylyg" path="res://resources/data/tags/date/date.tres" id="7_5w0st"]
-[ext_resource type="Resource" uid="uid://chilm8dyb4onb" path="res://resources/data/tags/style/style.tres" id="8_v5kwg"]
-[ext_resource type="PackedScene" uid="uid://ba3wiuftrnryp" path="res://assets/UI/tooltip_window.tscn" id="9_xw5o4"]
+[ext_resource type="Script" uid="uid://0alpwtp7bw1u" path="res://scripts/frame.gd" id="4_jmxw3"]
+[ext_resource type="PackedScene" uid="uid://coy1lrjm01fjd" path="res://assets/frame/Frame0.fbx" id="5_whm2p"]
+[ext_resource type="Texture2D" uid="uid://0787sw60fooq" path="res://addons/kenney_prototype_textures/green/texture_11.png" id="6_jmxw3"]
+[ext_resource type="Texture2D" uid="uid://cjf6w1iadromt" path="res://addons/kenney_prototype_textures/orange/texture_11.png" id="6_tx354"]
+[ext_resource type="PackedScene" uid="uid://6fqigji7h0uq" path="res://assets/platypus/platypus.tscn" id="8_tx354"]
 
 [sub_resource type="Environment" id="Environment_ixygg"]
 background_mode = 1
@@ -20,6 +19,22 @@ ssil_intensity = 0.7
 glow_enabled = true
 adjustment_saturation = 8.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whm2p"]
+albedo_texture = ExtResource("6_tx354")
+
+[sub_resource type="QuadMesh" id="QuadMesh_tx354"]
+material = SubResource("StandardMaterial3D_whm2p")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5v1b"]
+size = Vector3(0.0855117, 1.67474, 2.05942)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmxw3"]
+albedo_texture = ExtResource("6_jmxw3")
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jws1d"]
+material = SubResource("StandardMaterial3D_jmxw3")
+
 [node name="PrototypeScene" type="Node3D"]
 
 [node name="Camera" type="Camera3D" parent="."]
@@ -28,15 +43,16 @@ transform = Transform3D(-0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707
 projection = 1
 size = 15.0
 
-[node name="Lights" type="Node" parent="."]
+[node name="Lights" type="Node3D" parent="."]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -3, 4, 2)
 light_color = Color(1, 0.770841, 0.407929, 1)
 light_energy = 2.0
 light_bake_mode = 1
+shadow_enabled = true
 spot_range = 20.0
-spot_angle = 89.0
+spot_angle = 75.0
 spot_angle_attenuation = 0.659753
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights"]
@@ -44,8 +60,9 @@ transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.3
 light_color = Color(1, 0.770841, 0.407929, 1)
 light_energy = 2.0
 light_bake_mode = 1
+shadow_enabled = true
 spot_range = 20.0
-spot_angle = 89.0
+spot_angle = 75.0
 spot_angle_attenuation = 0.659753
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Lights"]
@@ -53,8 +70,9 @@ transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.3
 light_color = Color(1, 0.770841, 0.407929, 1)
 light_energy = 2.0
 light_bake_mode = 1
+shadow_enabled = true
 spot_range = 20.0
-spot_angle = 89.0
+spot_angle = 75.0
 spot_angle_attenuation = 0.659753
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Lights"]
@@ -62,8 +80,9 @@ transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.3
 light_color = Color(1, 0.770841, 0.407929, 1)
 light_energy = 2.0
 light_bake_mode = 1
+shadow_enabled = true
 spot_range = 20.0
-spot_angle = 89.0
+spot_angle = 75.0
 spot_angle_attenuation = 0.659753
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -76,25 +95,50 @@ script = ExtResource("2_20kwy")
 
 [node name="CursorArrow" parent="Cursor" instance=ExtResource("3_nhfup")]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="RayCast3D" type="RayCast3D" parent="Cursor/CursorArrow"]
+collision_mask = 2
+hit_from_inside = true
+debug_shape_thickness = 5
 
-[node name="TooltipWindow" parent="Control" instance=ExtResource("9_xw5o4")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.7
-anchor_right = 0.5
-anchor_bottom = 0.95
-grow_horizontal = 1
-grow_vertical = 0
+[node name="FrameGroup" type="Node3D" parent="."]
 
-[node name="RightMenu" parent="Control" node_paths=PackedStringArray("_tooltip_window") instance=ExtResource("4_sdrrl")]
-layout_mode = 1
-_initialCategoryList = Array[ExtResource("5_tx354")]([ExtResource("6_xw5o4"), ExtResource("7_5w0st"), ExtResource("8_v5kwg")])
-_tooltip_window = NodePath("../TooltipWindow")
+[node name="Frame" type="Node3D" parent="FrameGroup"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 1.5, 2)
+script = ExtResource("4_jmxw3")
+
+[node name="FrameMesh" parent="FrameGroup/Frame" instance=ExtResource("5_whm2p")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Texture" type="MeshInstance3D" parent="FrameGroup/Frame/FrameMesh"]
+transform = Transform3D(1.47607, 8.47033e-22, 0, 0, -8.15789e-08, 0.926373, 0, -1.86631, -4.04931e-08, -0.00523818, 0.0344729, -0.0011096)
+mesh = SubResource("QuadMesh_tx354")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FrameGroup/Frame"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrameGroup/Frame/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0445989, 0.0167672, -0.0188567)
+shape = SubResource("BoxShape3D_o5v1b")
+debug_color = Color(0, 0.857143, 1, 0.42)
+
+[node name="Frame1" type="Node3D" parent="FrameGroup"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 1.5, -5)
+script = ExtResource("4_jmxw3")
+
+[node name="FrameMesh" parent="FrameGroup/Frame1" instance=ExtResource("5_whm2p")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Texture" type="MeshInstance3D" parent="FrameGroup/Frame1/FrameMesh"]
+transform = Transform3D(0.742676, 0, -1.05879e-22, 0, 1, 0, 0, 0, 0.926373, -0.00523818, 0.0252719, -0.00110984)
+mesh = SubResource("PlaneMesh_jws1d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FrameGroup/Frame1"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrameGroup/Frame1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0445989, 0.0167672, -0.0188567)
+shape = SubResource("BoxShape3D_o5v1b")
+debug_color = Color(0, 0.857143, 1, 0.42)
+
+[node name="Platypus" parent="." instance=ExtResource("8_tx354")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 3.5)

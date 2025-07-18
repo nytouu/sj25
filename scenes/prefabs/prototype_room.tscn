@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://05uplq1qsiux"]
 
 [ext_resource type="Material" uid="uid://b5cd1nusu6o2a" path="res://resources/materials/mat_prototype_grid.tres" id="1_ycmsk"]
-[ext_resource type="Material" uid="uid://bw8fdqtvvc5h7" path="res://resources/materials/mat_prototype_base.tres" id="2_mg8ew"]
+[ext_resource type="PackedScene" uid="uid://bnnpgut8bp7xj" path="res://assets/base/socle.tscn" id="2_vx0uu"]
 
 [node name="PrototypeRoom" type="Node3D"]
 
@@ -38,20 +38,11 @@ material_override = ExtResource("1_ycmsk")
 size = Vector3(13, 4, 1)
 material = ExtResource("1_ycmsk")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.5, -7.5)
-material_override = ExtResource("2_mg8ew")
-size = Vector3(1, 2, 1)
-material = ExtResource("2_mg8ew")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.5, -2.5)
-material_override = ExtResource("2_mg8ew")
-size = Vector3(1, 2, 1)
-material = ExtResource("2_mg8ew")
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="Room"]
+[node name="Socle4" parent="Room" instance=ExtResource("2_vx0uu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, 3.5)
-material_override = ExtResource("2_mg8ew")
-size = Vector3(1, 2, 1)
-material = ExtResource("2_mg8ew")
+
+[node name="Socle5" parent="Room" instance=ExtResource("2_vx0uu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.5, -7.5)
+
+[node name="Socle6" parent="Room" instance=ExtResource("2_vx0uu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.5, -2.5)
