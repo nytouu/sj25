@@ -6,7 +6,7 @@ extends Control
 
 @onready var _itemListContainer: VBoxContainer = $PanelContainer/VBoxContainer/TabContainer/Inventory/VBoxContainer
 
-@onready var art_item_list: ItemList = $PanelContainer/VBoxContainer/TabContainer/Inventory/ArtItemList
+@onready var art_item_list: CustomItemList = $PanelContainer/VBoxContainer/TabContainer/Inventory/ArtItemList
 
 @export var _initialCategoryList: Array[Category]
 @export var _categoryList: Array[Category]
@@ -14,15 +14,17 @@ extends Control
 @export var _selectedCategory: Category = null
 @export var _selectedTag:Tag = null
 
+@export var ArtworkList: Array[Artwork]
 
 var _itemListList : Array[ItemList]
 
+@export var _tooltip_window: TooltipWindow
 
 func _ready() -> void:
 
 	_addInitialItems()
+	art_item_list._tooltip_window = _tooltip_window
 	
-
 # needs to be refacored for clarity
 func _addInitialItems():
 	
@@ -89,6 +91,7 @@ func _on_item_list_item_selected(index: int,itemList: ItemList ,category: Catego
 func _update_art_item_list():
 	
 	art_item_list.clear()
+	ArtworkList.clear()
 	
 	for a in GlobalManagerInstance.PlayerInventory:
 		
@@ -96,6 +99,7 @@ func _update_art_item_list():
 			
 			if(t == _selectedTag || _selectedTag == null):
 				art_item_list.add_icon_item(a.texture)
+				ArtworkList.append(a)
 				
 				break
 	

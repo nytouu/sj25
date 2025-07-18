@@ -5,6 +5,10 @@ extends Resource
 
 @export var texture: CompressedTexture2D
 
+@export var description: String
+
+
 @export var prefab: PackedScene
+
 
 @export var tags: Array[Tag]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba3wiuftrnryp"]
+
+[ext_resource type="Script" uid="uid://b33ptafr8n6vj" path="res://tooltip_window.gd" id="1_ic44g"]
+[ext_resource type="Script" uid="uid://bjxinunmnq3dk" path="res://assets/UI/RightMenu/gradient_text_effect.gd" id="2_vwgh4"]
+[ext_resource type="Script" uid="uid://cftmwkq76cwjd" path="res://assets/UI/RightMenu/cubism_text_effect.gd" id="3_vh3xc"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_vwgh4"]
+script = ExtResource("2_vwgh4")
+metadata/_custom_type_script = "uid://bjxinunmnq3dk"
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_kk1g2"]
+script = ExtResource("3_vh3xc")
+metadata/_custom_type_script = "uid://cftmwkq76cwjd"
+
+[node name="Control" type="Control"]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ic44g")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.9
+bbcode_enabled = true
+text = "[ cubism]CUBISM[/cubism]"
+custom_effects = [SubResource("RichTextEffect_vwgh4"), SubResource("RichTextEffect_kk1g2")]

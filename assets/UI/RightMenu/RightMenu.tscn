@@ -19,7 +19,7 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -109.0
+offset_left = -1152.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_poswa")
@@ -52,7 +52,7 @@ current_tab = 0
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="ArtItemList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Inventory"]
+[node name="ArtItemList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Inventory" node_paths=PackedStringArray("_menu_controller")]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 auto_width = true
@@ -63,6 +63,7 @@ same_column_width = true
 fixed_column_width = 100
 icon_mode = 0
 script = ExtResource("5_dmrgb")
+_menu_controller = NodePath("../../../../..")
 metadata/_custom_type_script = "uid://calfw7bq2cnhr"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/TabContainer/Inventory"]

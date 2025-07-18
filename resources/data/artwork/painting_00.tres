@@ -11,5 +11,6 @@
 script = ExtResource("1_uy1kv")
 name = "UnderTheSea"
 texture = ExtResource("6_24dbt")
+description = "A [gradient color0=#82aef5 color1=#0960eb span=4]Cold [/gradient] piece from the ....."
 tags = Array[ExtResource("2_x7ptn")]([ExtResource("3_kenfw"), ExtResource("4_uy1kv"), ExtResource("5_dlgnb")])
 metadata/_custom_type_script = "uid://dahjacvxjt7g8"

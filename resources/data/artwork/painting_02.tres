@@ -11,5 +11,6 @@
 script = ExtResource("1_m85iu")
 name = "ACuppaTeeGavno?"
 texture = ExtResource("6_m85iu")
+description = "une petite tasse de thé ?"
 tags = Array[ExtResource("2_hn24c")]([ExtResource("3_tj130"), ExtResource("4_m85iu"), ExtResource("5_bcare")])
 metadata/_custom_type_script = "uid://dahjacvxjt7g8"

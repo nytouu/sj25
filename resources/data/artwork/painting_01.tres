@@ -11,5 +11,6 @@
 script = ExtResource("1_amerj")
 name = "Grey"
 texture = ExtResource("6_amerj")
+description = "Je suis gris lol"
 tags = Array[ExtResource("2_g76px")]([ExtResource("3_amerj"), ExtResource("4_g76px"), ExtResource("5_amerj")])
 metadata/_custom_type_script = "uid://dahjacvxjt7g8"

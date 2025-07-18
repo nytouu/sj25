@@ -11,5 +11,6 @@
 script = ExtResource("1_onrhx")
 name = "WarmFeelings"
 texture = ExtResource("6_onrhx")
+description = "A [gradient color0=#e09c53 color1=#e85c20 spawn=4] Warm[/gradient] piece from ..."
 tags = Array[ExtResource("2_exx01")]([ExtResource("3_kbtrr"), ExtResource("4_vwpgu"), ExtResource("5_onrhx")])
 metadata/_custom_type_script = "uid://dahjacvxjt7g8"

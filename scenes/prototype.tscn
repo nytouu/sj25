@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbqfibu8866p3"]
+[gd_scene load_steps=11 format=3 uid="uid://bbqfibu8866p3"]
 
 [ext_resource type="PackedScene" uid="uid://05uplq1qsiux" path="res://scenes/prefabs/prototype_room.tscn" id="1_ixygg"]
 [ext_resource type="Script" uid="uid://cojgq6kb6gnch" path="res://scripts/cursor.gd" id="2_20kwy"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://cj71ex366pbb" path="res://resources/data/tags/color/color.tres" id="6_xw5o4"]
 [ext_resource type="Resource" uid="uid://cjx0mk5fiylyg" path="res://resources/data/tags/date/date.tres" id="7_5w0st"]
 [ext_resource type="Resource" uid="uid://chilm8dyb4onb" path="res://resources/data/tags/style/style.tres" id="8_v5kwg"]
+[ext_resource type="PackedScene" uid="uid://ba3wiuftrnryp" path="res://assets/UI/tooltip_window.tscn" id="9_xw5o4"]
 
 [sub_resource type="Environment" id="Environment_ixygg"]
 background_mode = 1
@@ -75,5 +76,25 @@ script = ExtResource("2_20kwy")
 
 [node name="CursorArrow" parent="Cursor" instance=ExtResource("3_nhfup")]
 
-[node name="RightMenu" parent="." instance=ExtResource("4_sdrrl")]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TooltipWindow" parent="Control" instance=ExtResource("9_xw5o4")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.7
+anchor_right = 0.5
+anchor_bottom = 0.95
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="RightMenu" parent="Control" node_paths=PackedStringArray("_tooltip_window") instance=ExtResource("4_sdrrl")]
+layout_mode = 1
 _initialCategoryList = Array[ExtResource("5_tx354")]([ExtResource("6_xw5o4"), ExtResource("7_5w0st"), ExtResource("8_v5kwg")])
+_tooltip_window = NodePath("../TooltipWindow")
