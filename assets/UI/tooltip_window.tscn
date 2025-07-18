@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://ba3wiuftrnryp"]
 
 [ext_resource type="Script" uid="uid://b33ptafr8n6vj" path="res://tooltip_window.gd" id="1_ic44g"]
-[ext_resource type="Script" uid="uid://bjxinunmnq3dk" path="res://assets/UI/RightMenu/gradient_text_effect.gd" id="2_vwgh4"]
-[ext_resource type="Script" uid="uid://cftmwkq76cwjd" path="res://assets/UI/RightMenu/cubism_text_effect.gd" id="3_vh3xc"]
+[ext_resource type="Script" uid="uid://bjxinunmnq3dk" path="res://scripts/UI/gradient_text_effect.gd" id="2_vwgh4"]
+[ext_resource type="Script" uid="uid://cftmwkq76cwjd" path="res://scripts/UI/cubism_text_effect.gd" id="3_vh3xc"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_vwgh4"]
 script = ExtResource("2_vwgh4")

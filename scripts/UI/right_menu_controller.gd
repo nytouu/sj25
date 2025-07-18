@@ -11,10 +11,19 @@ extends Control
 @export var _initialCategoryList: Array[Category]
 @export var _categoryList: Array[Category]
 
+var _defaultFrame = preload("res://assets/frame/frame.tscn")
+
+
 @export var _selectedCategory: Category = null
 @export var _selectedTag:Tag = null
 
 @export var ArtworkList: Array[Artwork]
+
+@export var HeldItem:Frame = null
+
+@export_flags_2d_physics var layers_2d_physics
+
+@export var camera: Camera3D
 
 var _itemListList : Array[ItemList]
 
@@ -102,4 +111,45 @@ func _update_art_item_list():
 				ArtworkList.append(a)
 				
 				break
+
+
+func _process(delta: float) -> void:
+	
+	if(HeldItem != null):
+		var mouse_pos = get_viewport().get_mouse_position()
+			
+		var from = camera.project_ray_origin(mouse_pos)
+		var direction = camera.project_ray_normal(mouse_pos)
+		var to = from + direction * 1000
+		
+		var space_state = camera.get_world_3d().direct_space_state
+		var ray:PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
+		
+		ray.from = from
+		ray.to = to
+		ray.collision_mask = layers_2d_physics
+		
+		var result: = space_state.intersect_ray(ray)
+		
+		if result:
+			var hit_position = result.position
+			var normal = result.normal
+			
+			var basis = Basis().looking_at(hit_position + Vector3.FORWARD, normal)
+			HeldItem.global_transform = Transform3D(basis, hit_position)
+			
+			
+			
+			
+			
+			
+			print(HeldItem.position)
+
+
+func _on_art_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
+
+	print("NEW ITEM")
+	var newFrame = _defaultFrame.instantiate()
+	add_child(newFrame)
+	HeldItem = newFrame
 	

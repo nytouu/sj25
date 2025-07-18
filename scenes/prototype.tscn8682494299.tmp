@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbqfibu8866p3"]
+[gd_scene load_steps=16 format=3 uid="uid://bbqfibu8866p3"]
 
 [ext_resource type="PackedScene" uid="uid://05uplq1qsiux" path="res://scenes/prefabs/prototype_room.tscn" id="1_ixygg"]
 [ext_resource type="Script" uid="uid://cojgq6kb6gnch" path="res://scripts/cursor.gd" id="2_20kwy"]
@@ -9,17 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://0787sw60fooq" path="res://addons/kenney_prototype_textures/green/texture_11.png" id="6_jmxw3"]
 [ext_resource type="Texture2D" uid="uid://cjf6w1iadromt" path="res://addons/kenney_prototype_textures/orange/texture_11.png" id="6_tx354"]
 [ext_resource type="PackedScene" uid="uid://6fqigji7h0uq" path="res://assets/platypus/platypus.tscn" id="8_tx354"]
-[ext_resource type="PackedScene" uid="uid://ba3wiuftrnryp" path="res://assets/UI/tooltip_window.tscn" id="10_5w0st"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_5w0st"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5kwg"]
-transparency = 1
-depth_draw_mode = 2
-albedo_color = Color(1, 1, 1, 0)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5w0st"]
-size = Vector3(45, 25, 1)
 
 [sub_resource type="Environment" id="Environment_ixygg"]
 background_mode = 1
@@ -54,21 +43,6 @@ unique_name_in_owner = true
 transform = Transform3D(-0.707107, -0.353553, 0.612373, 0, 0.866026, 0.5, -0.707107, 0.353553, -0.612373, 8.27149, 11.134, -14.8425)
 projection = 1
 size = 22.179
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Camera"]
-collision_layer = 128
-collision_mask = 128
-input_capture_on_drag = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera/StaticBody3D"]
-transform = Transform3D(44.925, 0, 0, 0, 29.815, 1.90735e-06, 0, 0, 27.8, -0.092, -0.0719995, -4.468)
-mesh = SubResource("QuadMesh_5w0st")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_v5kwg")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera/StaticBody3D"]
-transform = Transform3D(0.999696, 0, 0, 0, 0.999696, -2.98023e-08, 0, -2.98023e-08, 0.999696, 0, 0, -5)
-shape = SubResource("BoxShape3D_5w0st")
 
 [node name="Lights" type="Node3D" parent="."]
 
@@ -170,13 +144,4 @@ debug_color = Color(0, 0.857143, 1, 0.42)
 [node name="Platypus" parent="." instance=ExtResource("8_tx354")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 3.5)
 
-[node name="RightMenu" parent="." node_paths=PackedStringArray("camera", "_tooltip_window") instance=ExtResource("4_sdrrl")]
-camera = NodePath("../Camera")
-_tooltip_window = NodePath("../Control")
-
-[node name="Control" parent="." instance=ExtResource("10_5w0st")]
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.75
-anchor_right = 0.5
-anchor_bottom = 0.95
+[node name="RightMenu" parent="." instance=ExtResource("4_sdrrl")]

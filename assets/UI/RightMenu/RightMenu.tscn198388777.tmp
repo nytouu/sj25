@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3im5x811pdg3"]
 
-[ext_resource type="Script" uid="uid://d36mbph6mbq00" path="res://scripts/UI/right_menu_controller.gd" id="1_poswa"]
+[ext_resource type="Script" uid="uid://d36mbph6mbq00" path="res://assets/UI/RightMenu/right_menu_controller.gd" id="1_poswa"]
 [ext_resource type="Script" uid="uid://cs05jffagcsew" path="res://resources/data/tags/category_ressource.gd" id="2_88aqk"]
 [ext_resource type="Resource" uid="uid://cj71ex366pbb" path="res://resources/data/tags/color/color.tres" id="3_qfh3q"]
 [ext_resource type="Resource" uid="uid://cjx0mk5fiylyg" path="res://resources/data/tags/date/date.tres" id="4_qfh3q"]
-[ext_resource type="Script" uid="uid://calfw7bq2cnhr" path="res://scripts/UI/custom_item_list.gd" id="5_dmrgb"]
+[ext_resource type="Script" uid="uid://calfw7bq2cnhr" path="res://assets/UI/RightMenu/custom_item_list.gd" id="5_dmrgb"]
 
 [sub_resource type="GDScript" id="GDScript_88aqk"]
 script/source = "extends OptionButton
@@ -24,7 +24,6 @@ grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_poswa")
 _initialCategoryList = Array[ExtResource("2_88aqk")]([ExtResource("3_qfh3q"), ExtResource("4_qfh3q")])
-layers_2d_physics = 128
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -80,5 +79,4 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[connection signal="item_clicked" from="PanelContainer/VBoxContainer/TabContainer/Inventory/ArtItemList" to="." method="_on_art_item_list_item_clicked"]
 [connection signal="item_selected" from="PanelContainer/VBoxContainer/TabContainer/Inventory/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
