@@ -1,15 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbqfibu8866p3"]
+[gd_scene load_steps=22 format=3 uid="uid://bbqfibu8866p3"]
 
 [ext_resource type="PackedScene" uid="uid://05uplq1qsiux" path="res://scenes/prefabs/prototype_room.tscn" id="1_ixygg"]
 [ext_resource type="Script" uid="uid://cojgq6kb6gnch" path="res://scripts/cursor.gd" id="2_20kwy"]
 [ext_resource type="PackedScene" uid="uid://o4i0x8yjiqeh" path="res://assets/cursor_arrow/cursor_arrow.tscn" id="3_nhfup"]
-[ext_resource type="Script" path="res://scripts/frame.gd" id="4_jmxw3"]
+[ext_resource type="Script" uid="uid://0alpwtp7bw1u" path="res://scripts/frame.gd" id="4_jmxw3"]
 [ext_resource type="PackedScene" uid="uid://b3im5x811pdg3" path="res://assets/UI/RightMenu/RightMenu.tscn" id="4_sdrrl"]
 [ext_resource type="PackedScene" uid="uid://coy1lrjm01fjd" path="res://assets/frame/Frame0.fbx" id="5_whm2p"]
 [ext_resource type="Texture2D" uid="uid://0787sw60fooq" path="res://addons/kenney_prototype_textures/green/texture_11.png" id="6_jmxw3"]
 [ext_resource type="Texture2D" uid="uid://cjf6w1iadromt" path="res://addons/kenney_prototype_textures/orange/texture_11.png" id="6_tx354"]
 [ext_resource type="PackedScene" uid="uid://6fqigji7h0uq" path="res://assets/platypus/platypus.tscn" id="8_tx354"]
 [ext_resource type="PackedScene" uid="uid://ba3wiuftrnryp" path="res://assets/UI/tooltip_window.tscn" id="10_5w0st"]
+[ext_resource type="Material" uid="uid://bwg64jd0cohmi" path="res://resources/materials/mat_couch.tres" id="11_hlbek"]
+[ext_resource type="ArrayMesh" uid="uid://uhv5j20yb83j" path="res://assets/couch/MuseumCouch.obj" id="12_l4p8t"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_5w0st"]
 
@@ -180,3 +182,8 @@ anchor_left = 0.05
 anchor_top = 0.75
 anchor_right = 0.5
 anchor_bottom = 0.95
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.32766, -0.507134, -6.95143)
+material_override = ExtResource("11_hlbek")
+mesh = ExtResource("12_l4p8t")
