@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bbqfibu8866p3"]
+[gd_scene load_steps=28 format=3 uid="uid://bbqfibu8866p3"]
 
 [ext_resource type="PackedScene" uid="uid://05uplq1qsiux" path="res://scenes/prefabs/prototype_room.tscn" id="1_ixygg"]
 [ext_resource type="Script" uid="uid://cojgq6kb6gnch" path="res://scripts/cursor.gd" id="2_20kwy"]
@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://ba3wiuftrnryp" path="res://assets/UI/tooltip_window.tscn" id="10_5w0st"]
 [ext_resource type="Material" uid="uid://bwg64jd0cohmi" path="res://resources/materials/mat_couch.tres" id="11_hlbek"]
 [ext_resource type="ArrayMesh" uid="uid://uhv5j20yb83j" path="res://assets/couch/MuseumCouch.obj" id="12_l4p8t"]
+[ext_resource type="ArrayMesh" uid="uid://bcnjsbel4rhqn" path="res://assets/Walls/Wall.obj" id="13_wduts"]
+[ext_resource type="Texture2D" uid="uid://cvae5hq14hr2f" path="res://assets/Walls/Texture Murs.png" id="14_02j6x"]
+[ext_resource type="ArrayMesh" uid="uid://b8iorid0fk3d3" path="res://assets/Floors/Floor.obj" id="15_pxa5l"]
+[ext_resource type="Texture2D" uid="uid://o1r6cpl4m7qi" path="res://assets/Floors/Texturesols.png" id="16_2m0rh"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_5w0st"]
 
@@ -48,6 +52,12 @@ uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jws1d"]
 material = SubResource("StandardMaterial3D_jmxw3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybn2f"]
+albedo_texture = ExtResource("14_02j6x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7prby"]
+albedo_texture = ExtResource("16_2m0rh")
 
 [node name="PrototypeScene" type="Node3D"]
 
@@ -184,6 +194,16 @@ anchor_right = 0.5
 anchor_bottom = 0.95
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.32766, -0.507134, -6.95143)
+transform = Transform3D(1.00007, 0, 0, 0, 1.00007, 0, 0, 0, 1.00007, 4.32766, -0.507134, -6.95143)
 material_override = ExtResource("11_hlbek")
 mesh = ExtResource("12_l4p8t")
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.991537, 0, 0, 0, 1.02229, 0, 0, 0, 2.47377, -0.203564, -0.487533, -5.09295)
+mesh = ExtResource("13_wduts")
+surface_material_override/0 = SubResource("StandardMaterial3D_ybn2f")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.999908, 0, -0.0135433, 0, 1, 0, 0.0135433, 0, -0.999908, 2.47435, -0.489493, -5.16987)
+mesh = ExtResource("15_pxa5l")
+surface_material_override/0 = SubResource("StandardMaterial3D_7prby")
